@@ -1,37 +1,80 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Patrick+Hand&family=Poppins:wght@300;500;600;700;800&family=Teko:wght@300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: 0;
+  font-family: Teko, sans-serif;
+  user-select: none;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  background-color: #000;
-  color: #fff;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  background-image: url("images/background.jpg");
+  backdrop-filter: blur(10px);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 h1 {
-  font-size: 32px;
-  margin-top: 100px;
-}
-
-form {
+  text-align: center;
+  color: #ff0000;
+  font-family: "Arial", sans-serif;
+  font-size: 5rem;
   margin-top: 50px;
 }
 
 label {
   display: block;
-  margin-bottom: 10px;
-}
-input[type="text"] {
-  padding: 10px;
-  font-size: 16px;
+  color: #ffffff;
+  font-family: "Arial", sans-serif;
+  margin-top: 30px;
+  text-align: center;
+  font-size: 24px;
 }
 
-button {
-  padding: 10px 20px;
+input[type="text"] {
+  display: block;
+  margin: 10px auto;
+  padding: 10px;
+  width: 200px;
   font-size: 18px;
-  background-color: #ff9800;
-  color: #fff;
+  border-radius: 15px;
+}
+
+button#startButton {
+  display: block;
+  margin: 30px auto;
+  padding: 10px 20px;
+  font-size: 24px;
+  background-color: #ff0000;
+  color: #ffffff;
   border: none;
   cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  border-radius: 10%;
 }
 
-button:hover {
-  background-color: #ff6600;
+button#startButton:hover {
+  background-color: #ff6666;
+}
+
+@keyframes buttonAnimation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+button#startButton {
+  animation: buttonAnimation 2s infinite;
 }
