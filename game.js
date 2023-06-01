@@ -306,7 +306,7 @@ leftShockButton.addEventListener("click", function () {
         clearTimeout(attackTimeout);
       }
     } else {
-      gameOver("bonnieChock");
+      gameOver("bonnieShock");
     }
   }
 });
@@ -339,6 +339,7 @@ setTimeout(() => {
 }, 225000);
 setTimeout(() => {
   timerText.textContent = "6 AM";
+  gameOver("win");
 }, 270000);
 
 /*---------------------------------------------------------------------------------------------------------*/
@@ -353,10 +354,10 @@ class Animatronic {
   }
 }
 
-const bonnie = new Animatronic("Bonnie", 1, 0);
+const bonnie = new Animatronic("Bonnie", 2, 0);
 const bonnieDiv = document.querySelector("#bonnie");
 
-const chica = new Animatronic("Chica", 2, 0);
+const chica = new Animatronic("Chica", 1, 0);
 const chicaDiv = document.querySelector("#chica");
 
 //Bonnie code lines:
@@ -406,11 +407,21 @@ setInterval(() => {
 const causeText = document.querySelector("#causeText");
 
 function gameOver(cause) {
-  setTimeout(() => {
-    window.location.href =
-      "gameOver.html?cause=" +
-      encodeURIComponent(cause) +
-      "&username=" +
-      encodeURIComponent(username);
-  }, 500);
+  if (cause == "chicaShock" || cause == "bonnieShock") {
+    setTimeout(() => {
+      window.location.href =
+        "gameOver.html?cause=" +
+        encodeURIComponent(cause) +
+        "&username=" +
+        encodeURIComponent(username);
+    }, 500);
+  } else {
+    setTimeout(() => {
+      window.location.href =
+        "gameOver.html?cause=" +
+        encodeURIComponent(cause) +
+        "&username=" +
+        encodeURIComponent(username);
+    }, 0);
+  }
 }
