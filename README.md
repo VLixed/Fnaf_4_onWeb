@@ -5,7 +5,7 @@ had to do it on github cuz it's a favorite place!
 
 ------------------------------Steps to play-----------------------------
 Online:
-.just go to https://vlixed.github.io/Fnaf_4_onWeb/
+.just go to https://vlixed.github.io/Fnaf_4_onWeb/ 
 and you're ready to go!
 
 Offline:
