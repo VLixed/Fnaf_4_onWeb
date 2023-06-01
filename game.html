@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fnaf 4 (2D)</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>Fnaf 4 (2D)</h1>
+      <div id="timer">12 PM</div>
+    </header>
+    <audio id="farScare">
+      <source src="audio/FarScare.mp3" type="audio/mpeg" />
+    </audio>
+    <audio id="closeScare">
+      <source src="audio/CloseScare.mp3" type="audio/mpeg" />
+    </audio>
+    <audio id="flashOnLeft">
+      <source src="audio/FlashOnLeft.mp3" type="audio/mpeg" />
+    </audio>
+    <audio id="flashOffLeft">
+      <source src="audio/FlashOffLeft.mp3" type="audio/mpeg" />
+    </audio>
+    <audio id="flashOnRight">
+      <source src="audio/FlashOnRight.mp3" type="audio/mpeg" />
+    </audio>
+    <audio id="flashOffRight">
+      <source src="audio/FlashOffRight.mp3" type="audio/mpeg" />
+    </audio>
+    <audio id="ambienceSong">
+      <source src="audio/Ambience song.mp3" type="audio/mpeg" />
+    </audio>
+    <audio id="leftShockSfx">
+      <source src="audio/leftShock.mp3" type="audio/mpeg" />
+    </audio>
+    <audio id="rightShockSfx">
+      <source src="audio/rightShock.mp3" type="audio/mpeg" />
+    </audio>
+    <div class="container">
+      <div class="map">
+        <div class="room" id="leftHallway">
+          <div class="char" id="bonnie">
+            <span class="display-text">Bonnie</span>
+          </div>
+          <button class="aButton" id="leftFlashButton">
+            <i class="fa-solid fa-bolt"></i> Flashlight
+          </button>
+          <button class="aButton" id="leftShockButton">
+            <i class="fa-solid fa-fire"></i> Shock
+          </button>
+        </div>
+        <div class="room" id="livingRoom"></div>
+        <div class="room" id="rightHallway">
+          <div class="char" id="chica">
+            <span class="display-text">Chica</span>
+          </div>
+          <button class="aButton" id="rightFlashButton">
+            <i class="fa-solid fa-bolt"></i> Flashlight
+          </button>
+          <button class="aButton" id="rightShockButton">
+            <i class="fa-solid fa-fire"></i> Shock
+          </button>
+        </div>
+        <div class="room" id="bedRoom">
+          <div onclick="gotoLDoor()" class="interactive" id="leftDoor">
+            LDoor
+          </div>
+          <div onclick="gotoRDoor()" class="interactive" id="rightDoor">
+            RDoor
+          </div>
+          <div onclick="gotoCloset()" class="interactive" id="closet">
+            Closet
+          </div>
+          <div onclick="gotoBed()" class="interactive" id="bed">Bed</div>
+          <div onclick="gotoBase()" class="interactive" id="base">go back</div>
+          <div class="char" id="player">
+            <span class="display-text" id="usernameText">Player</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
