@@ -6,7 +6,7 @@ had to do it on github cuz it's a favorite place!
 Online:
 .just go to https://vlixed.github.io/Fnaf_4_onWeb/ 
 and you're ready to go!
-
+ 
 Offline:
 .You need to download the files first and extract them in a folder.
 .then you just open up Index.html and you're ready to go!
