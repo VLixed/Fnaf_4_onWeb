@@ -9,6 +9,8 @@ if (username != "") {
   usernameText.textContent = username;
 }
 
+let attack;
+
 const player = document.querySelector("#player");
 const LDoor = document.querySelector("#leftDoor");
 const RDoor = document.querySelector("#rightDoor");
@@ -152,18 +154,24 @@ leftFlashButton.addEventListener("mousedown", function () {
         bonnieDiv.style.removeProperty("transition");
         bonnieDiv.style.transform = "translate(0px, 225px)";
         bonnieDiv.style.visibility = "visible";
-        attackTimeout = setTimeout(() => {
-          gameOver("bonnie");
-        }, 3000);
+        if (!attack) {
+          attackTimeout = setTimeout(() => {
+            gameOver("bonnie");
+          }, 2500);
+        }
+        attack = true;
         farScare.play();
         break;
       case 3:
         bonnieDiv.style.removeProperty("transition");
         bonnieDiv.style.transform = "translate(60px, 245px)";
         bonnieDiv.style.visibility = "visible";
-        attackTimeout = setTimeout(() => {
-          gameOver("bonnie");
-        }, 1500);
+        if (!attack) {
+          attackTimeout = setTimeout(() => {
+            gameOver("bonnie");
+          }, 1250);
+        }
+        attack = true;
         farScare.play();
         break;
     }
@@ -212,18 +220,24 @@ rightFlashButton.addEventListener("mousedown", function () {
         chicaDiv.style.removeProperty("transition");
         chicaDiv.style.transform = "translate(0px, 225px)";
         chicaDiv.style.visibility = "visible";
-        attackTimeout = setTimeout(() => {
-          gameOver("chica");
-        }, 3000);
+        if (!attack) {
+          attackTimeout = setTimeout(() => {
+            gameOver("chica");
+          }, 2500);
+        }
+        attack = true;
         farScare.play();
         break;
       case 3:
         chicaDiv.style.removeProperty("transition");
         chicaDiv.style.transform = "translate(-60px, 250px)";
         chicaDiv.style.visibility = "visible";
-        attackTimeout = setTimeout(() => {
-          gameOver("chica");
-        }, 1500);
+        if (!attack) {
+          attackTimeout = setTimeout(() => {
+            gameOver("chica");
+          }, 1250);
+        }
+        attack = true;
         farScare.play();
         break;
     }
@@ -271,6 +285,7 @@ rightShockButton.addEventListener("click", function () {
       }, 250);
       if (typeof attackTimeout !== "undefined") {
         clearTimeout(attackTimeout);
+        attack = false;
       }
       chica.stage = 0;
       chicaDiv.style.transform = "translate(0px, 0px)";
@@ -304,6 +319,7 @@ leftShockButton.addEventListener("click", function () {
       bonnieDiv.style.transform = "translate(0px, 0px)";
       if (typeof attackTimeout !== "undefined") {
         clearTimeout(attackTimeout);
+        attack = false;
       }
     } else {
       gameOver("bonnieShock");
